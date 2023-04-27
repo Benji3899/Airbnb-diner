@@ -58,7 +58,7 @@ button.btn{
 #countdown span{
     font-size: 2rem;
 }
-form button{
+form .btn{
     background-color: #ff385c;
 }
 

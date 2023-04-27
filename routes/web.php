@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('diner-airbnb');
 });
 
 Route::get('/dashboard', function () {
@@ -31,12 +31,13 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('/diner-airbnb', function ()
-{
-    return view('/diner-airbnb');
-});
+//Route::get('/diner-airbnb', function ()
+//{
+//    return view('/diner-airbnb');
+//});
 
-Route::get('/diner-airbnb', [FormController::class, 'showContactForm'])->name('diner-airbnb.form');
+//Route::get('/diner-airbnb', [FormController::class, 'showContactForm'])->name('diner-airbnb.form');
+//
+//Route::post('/diner-airbnb', [FormController::class, 'submitContactForm'])->name('diner-airbnb.submit');
 
-Route::post('/diner-airbnb', [FormController::class, 'submitContactForm'])->name('diner-airbnb.submit');
-
+Route::resource('diner-airbnb',FormController::class)->middleware('auth');

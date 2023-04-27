@@ -107,7 +107,7 @@
     <div>{{ session('success') }}</div>
 @endif
 <section id="section-form" class="mb-24">
-    <form method="post" action="{{ route('diner-airbnb.submit') }}" class="w-2/4 mx-auto mt-6 space-y-6">
+    <form method="post" action="{{ route('diner-airbnb.store') }}" class="w-2/4 mx-auto mt-6 space-y-6">
         @csrf
         {{--        @method('patch')--}}
         <h4 class="text-center">Contactez-nous</h4>
@@ -139,7 +139,7 @@
                 </div>
             </div>
         </div>
-        <button class="rounded-md py-2 px-6 font-bold text-white  hover:duration-200" type="">{{ __('Envoyer') }}</button>
+        <button class="btn rounded-md py-2 px-6 font-bold text-white hover:duration-200" type="submit">Envoyer</button>
     </form>
 </section>
 
