@@ -19,12 +19,9 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-//        'name',
+        'fullname',
         'email',
         'password',
-        'fullname',
-        'sujet',
-        'message',
     ];
 
 
@@ -47,5 +44,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+//vérifie si l'utilisateur a le rôle admin ou non.
+    public function isAdmin() {
+        return $this->role === 'admin';
+    }
 
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -29,15 +30,11 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::resource('diner-airbnb',FormController::class)->middleware('auth');
+
+
+//Route::get('admin', [AdminController::class, 'index'])->middleware(['auth', 'admin']);
+Route::resource('admin', AdminController::class)->middleware(['auth']);
+
 require __DIR__.'/auth.php';
 
-//Route::get('/diner-airbnb', function ()
-//{
-//    return view('/diner-airbnb');
-//});
-
-//Route::get('/diner-airbnb', [FormController::class, 'showContactForm'])->name('diner-airbnb.form');
-//
-//Route::post('/diner-airbnb', [FormController::class, 'submitContactForm'])->name('diner-airbnb.submit');
-
-Route::resource('diner-airbnb',FormController::class)->middleware('auth');

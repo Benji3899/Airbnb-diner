@@ -9,18 +9,6 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
-{{--<nav class="navbar dark-mode" role="navigation">--}}
-{{--    <div class="nav-container w-100 flex content-between item-center">--}}
-{{--        <div class="navbar-logo"><a href="./accueil.php"><img src="" alt=""></a></div>--}}
-{{--        <ul class="navbar-links">--}}
-{{--            <li class="navbar-link first"><a href="./accueil.php">Accueil</a></li>--}}
-{{--            <li class="navbar-link four"><a href="#contact">Contact</a></li>--}}
-{{--        </ul>--}}
-{{--        <button class="burger">--}}
-{{--            <span class="bar"></span>--}}
-{{--        </button>--}}
-{{--    </div>--}}
-{{--</nav>--}}
 <section>
     <div>
         @if (Route::has('login'))
